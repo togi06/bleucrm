@@ -1,5 +1,6 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,6 +9,7 @@ public class Login_StepDefinitions {
 
     @Given("user is on the {string} login page")
     public void user_is_on_the_login_page(String string) {
+        Driver.getDriver().get("https://qa.bleucrm.com/");
 
     }
     @When("user enters helpdesk username")
