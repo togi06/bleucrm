@@ -3,6 +3,7 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.BleuCrmLoginPage;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,8 +33,19 @@ public class Login_StepDefinitions {
     }
 
 
+    @When("user enters Human Resource username")
+    public void userEntersHumanResourceUsername() {
+    }
 
+    @And("user enters Human Resource password")
+    public void userEntersHumanResourcePassword() {
+    }
 
+    @When("user enters Marketing username")
+    public void userEntersMarketingUsername() {
+    }
 
-
+    @And("user enters Marketing password")
+    public void userEntersMarketingPassword() {
+    }
 }
