@@ -35,17 +35,21 @@ public class Login_StepDefinitions {
 
     @When("user enters Human Resource username")
     public void userEntersHumanResourceUsername() {
+        bleuCrmLoginPage.login.sendKeys("hr1@cybertekschool.com");
     }
 
     @And("user enters Human Resource password")
     public void userEntersHumanResourcePassword() {
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("userhelp101pass"));
     }
 
     @When("user enters Marketing username")
     public void userEntersMarketingUsername() {
+        bleuCrmLoginPage.login.sendKeys("marketing1@cybertekschool.com");
     }
 
     @And("user enters Marketing password")
     public void userEntersMarketingPassword() {
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("userhelp101pass"));
     }
 }
