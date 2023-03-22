@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class Login_StepDefinitions {
     BleuCrmLoginPage bleuCrmLoginPage = new BleuCrmLoginPage();
@@ -23,7 +24,7 @@ public class Login_StepDefinitions {
     }
     @When("user enters helpdesk password")
     public void user_enters_helpdesk_password() {
-        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("userhelp101pass"));
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("pass"));
 
     }
     @Then("user should see the dashboard")
@@ -35,21 +36,47 @@ public class Login_StepDefinitions {
 
     @When("user enters Human Resource username")
     public void userEntersHumanResourceUsername() {
-        bleuCrmLoginPage.login.sendKeys("hr1@cybertekschool.com");
+        bleuCrmLoginPage.login.sendKeys(ConfigurationReader.getProperty("userhr1"));
     }
 
     @And("user enters Human Resource password")
     public void userEntersHumanResourcePassword() {
-        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("userhelp101pass"));
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("pass"));
     }
 
     @When("user enters Marketing username")
     public void userEntersMarketingUsername() {
-        bleuCrmLoginPage.login.sendKeys("marketing1@cybertekschool.com");
+        bleuCrmLoginPage.login.sendKeys(ConfigurationReader.getProperty("usermarket1"));
     }
 
     @And("user enters Marketing password")
     public void userEntersMarketingPassword() {
-        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("userhelp101pass"));
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("pass"));
+    }
+
+    @When("user enters incorrect  username")
+    public void userEntersIncorrectUsername() {
+        bleuCrmLoginPage.login.sendKeys(ConfigurationReader.getProperty("incorrectusername"));
+    }
+
+    @And("user enters correct password")
+    public void userEntersCorrectPassword() {
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("pass"));
+    }
+
+    @When("user enters correct  username")
+    public void userEntersCorrectUsername() {
+        bleuCrmLoginPage.login.sendKeys(ConfigurationReader.getProperty("usermarket1"));
+    }
+
+    @And("user enters incorrect password")
+    public void userEntersIncorrectPassword() {
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("incorrectpass"));
+    }
+
+
+    @Then("user click the button")
+    public void userClickTheButton() {
+        bleuCrmLoginPage.loginBtn.click();
     }
 }

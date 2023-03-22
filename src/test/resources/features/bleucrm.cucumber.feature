@@ -27,3 +27,19 @@ Feature: Login the website
      When user enters Marketing username
      And user enters Marketing password
      Then user should see the dashboard
+
+ @User2
+  Scenario: Login as incorrect username
+    When user enters incorrect  username
+    And user enters correct password
+
+
+  @User2
+  Scenario: Login as incorrect  pass
+    When user enters correct  username
+    And user enters incorrect password
+    Then user click the button
+
+
+
+
