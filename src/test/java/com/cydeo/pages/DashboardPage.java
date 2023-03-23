@@ -5,20 +5,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BleuCrmLoginPage {
+public class DashboardPage {
 
-    public BleuCrmLoginPage(){
+    public DashboardPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
     @FindBy(name = "USER_LOGIN")
-    public WebElement login;
+    public WebElement DashLogin;
 
     @FindBy(name = "USER_PASSWORD")
-    public WebElement password;
+    public WebElement DashPassword;
 
     @FindBy(xpath = "//input[@class='login-btn']")
-    public WebElement loginBtn;
+    public WebElement DashLoginBtn;
+
+    @FindBy(xpath = "//span[@class='user-name']")
+    public WebElement dashboardName;
 
 
 }
