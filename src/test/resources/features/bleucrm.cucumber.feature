@@ -10,7 +10,7 @@ Feature: Login the website
     Given user is on the "bleuCrm" login page
 
 
-    @BLEU10-255
+    @BLEU10-255 @User1 @User6
     Scenario: Login as Helpdesk
       When user enters helpdesk username
       And user enters helpdesk password
@@ -40,6 +40,11 @@ Feature: Login the website
     And user enters incorrect password
     Then user click the button
 
+  @User7
+  Scenario: Enter login
+    When user enter the valid username
+    And user enter the valid password
+    Then user enter the login button
 
 
 

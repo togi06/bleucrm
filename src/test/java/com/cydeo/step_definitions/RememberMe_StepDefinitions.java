@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class RememberMe_StepDefinitions {
 
@@ -28,5 +29,6 @@ public class RememberMe_StepDefinitions {
     @Then("user cn click on checkbox")
     public void userCnClickOnCheckbox() {
         rememberMePage.checkBox.click();
+
     }
 }

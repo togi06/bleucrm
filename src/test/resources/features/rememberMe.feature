@@ -10,3 +10,4 @@ Feature:Login the website
       When user login the page
       And user can see "Remember me on this computer"
       Then user cn click on checkbox
+

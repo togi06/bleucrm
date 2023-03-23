@@ -31,6 +31,7 @@ public class Login_StepDefinitions {
     public void user_should_see_the_dashboard() {
         bleuCrmLoginPage.loginBtn.click();
 
+
     }
 
 
