@@ -13,16 +13,15 @@ public class NoLogin_Stepdefinitions {
 
     @When("user enters empty  username")
     public void user_enters_empty_username() {
-        noLoginPages.noLogin.sendKeys("");
+        noLoginPages.noLogin.clear();
         noLoginPages.noPass.sendKeys(ConfigurationReader.getProperty("pass"));
 
     }
     @Then("user should see {string} message")
-    public void user_should_see_message(String string) {
-        noLoginPages.errorText.getText();
-        String expectedText= "Please fill out this field";
-        String  actualTExt= "Incorrect login or password";
-        Assert.assertEquals(expectedText,actualTExt);
+    public void user_should_see_message(String expectedText1) {
+
+        String  actualText= noLoginPages.errorText.getText();
+        Assert.assertEquals(expectedText1,actualText);
 
 
 
@@ -39,7 +38,7 @@ public class NoLogin_Stepdefinitions {
 
     @And("user enters empty password")
     public void userEntersEmptyPassword() {
-        noLoginPages.noPass.sendKeys();
+        noLoginPages.noPass.clear();
 
     }
 
