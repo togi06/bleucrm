@@ -35,12 +35,9 @@ public class Dashboard_StepDefinitions {
         dashboardPage.DashLoginBtn.click();
     }
 
-
-
     @When("user enters  Hr_username")
     public void userEntersHr_username() {
         dashboardPage.DashLogin.sendKeys(ConfigurationReader.getProperty("userhr1"));
-
 
     }
 
