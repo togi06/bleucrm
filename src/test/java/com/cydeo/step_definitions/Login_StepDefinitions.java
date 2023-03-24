@@ -1,6 +1,7 @@
 package com.cydeo.step_definitions;
 
 import com.cydeo.pages.BleuCrmLoginPage;
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -30,6 +31,8 @@ public class Login_StepDefinitions {
     @Then("user should see the dashboard")
     public void user_should_see_the_dashboard() {
         bleuCrmLoginPage.loginBtn.click();
+
+
 
 
     }

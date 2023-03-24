@@ -49,7 +49,7 @@ public class Dashboard_StepDefinitions {
 
     @Then("user can see their own usernames in the dashboard, after successful login")
    public void userCanSeeTheirOwnUsernamesInTheDashboardAfterSuccessfulLogin() {
-       BrowserUtils.sleep(2);
+      // BrowserUtils.sleep(2);
         String expectedName= ConfigurationReader.getProperty("userhelp101");
         String actualName=  dashboardPage.dashboardName.getText();
         Assert.assertEquals( expectedName,actualName);
@@ -58,7 +58,7 @@ public class Dashboard_StepDefinitions {
 
     @Then("user can see their his usernames in the dashboard, after successful login")
     public void userCanSeeTheirHisUsernamesInTheDashboardAfterSuccessfulLogin() {
-        BrowserUtils.sleep(2);
+        //BrowserUtils.sleep(2);
         String expectedName= ConfigurationReader.getProperty("userhr1");
         String actualName=  dashboardPage.dashboardName.getText();
         Assert.assertEquals( expectedName,actualName);
@@ -66,7 +66,7 @@ public class Dashboard_StepDefinitions {
 
     @Then("user can see their her-usernames in the dashboard, after successful login")
     public void userCanSeeTheirHerUsernamesInTheDashboardAfterSuccessfulLogin() {
-        BrowserUtils.sleep(2);
+      //  BrowserUtils.sleep(2);
         String expectedName= ConfigurationReader.getProperty("usermarket1");
         String actualName=  dashboardPage.dashboardName.getText();
         Assert.assertEquals( expectedName,actualName);
