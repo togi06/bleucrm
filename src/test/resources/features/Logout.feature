@@ -62,8 +62,8 @@ Feature: Log out the website
    #   | marketing100@cybertekschool.com |  | UserUser        |
    #   | marketing101@cybertekschool.com |  | UserUser        |
 
-  @User2.1LO
-  Scenario Outline: Logout as Helpdesk and back
+  @User2LO
+  Scenario Outline: Logout as Helpdesk,Human Resource, Marketing and back
     Given users firstly go to on the "bleuCrm" login page
     When users enters "<valid username>" username
     And users enters "<valid password>" password
@@ -111,3 +111,31 @@ Feature: Log out the website
   #  Examples:
   #    | valid username2               |  | valid password2 |
   #    | marketing1@cybertekschool.com |  | UserUser        |
+
+  @User2LO
+  Scenario Outline: Logout as Helpdesk and open the tab again
+    Given users firstly go to on the "bleuCrm" login page
+    When users enters "<valid username>" username
+    And users enters "<valid password>" password
+    And users should see the dashboard
+    And users close the tab
+    Then users open the tab again
+
+    Examples:
+      | valid username                  |  | valid password |
+      | helpdesk1@cybertekschool.com    |  | UserUser       |
+      | helpdesk2@cybertekschool.com    |  | UserUser       |
+      | helpdesk99@cybertekschool.com   |  | UserUser       |
+      | helpdesk100@cybertekschool.com  |  | UserUser       |
+      | helpdesk101@cybertekschool.com  |  | UserUser       |
+      | hr1@cybertekschool.com          |  | UserUser       |
+      | hr2@cybertekschool.com          |  | UserUser       |
+      | hr99@cybertekschool.com         |  | UserUser       |
+      | hr100@cybertekschool.com        |  | UserUser       |
+      | hr101@cybertekschool.com        |  | UserUser       |
+      | marketing1@cybertekschool.com   |  | UserUser       |
+      | marketing2@cybertekschool.com   |  | UserUser       |
+      | marketing99@cybertekschool.com  |  | UserUser       |
+      | marketing100@cybertekschool.com |  | UserUser       |
+      | marketing101@cybertekschool.com |  | UserUser       |
+

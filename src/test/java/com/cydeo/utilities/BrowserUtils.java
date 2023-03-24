@@ -1,13 +1,12 @@
 package com.cydeo.utilities;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class BrowserUtils {
@@ -65,6 +64,28 @@ public class BrowserUtils {
             e.printStackTrace();
             Assert.fail("Element not found: " + element);
 
+        }
+    }
+
+    public static void openNewTab() {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.open();");
+    }
+    public static void waitForNewWindow() {
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 4);
+            wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void switchToWindow(int index) {
+        try {
+            waitForNewWindow();
+            Set<String> windowHandles = Driver.getDriver().getWindowHandles();
+            ArrayList<String> allTabs = new ArrayList<>(windowHandles);
+            Driver.getDriver().switchTo().window(allTabs.get(index));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

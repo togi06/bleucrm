@@ -8,6 +8,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class Logout_StepDefinitions {
    LogOutPage logOutPage = new LogOutPage();
@@ -71,4 +76,31 @@ public class Logout_StepDefinitions {
        BrowserUtils.sleep(1);
         Driver.getDriver().navigate().back();
     }
+
+
+    @And("users close the tab")
+    public void usersCloseTheTab() {
+     //  BrowserUtils.sleep(2);
+       // Driver.getDriver().close();
+        BrowserUtils.openNewTab();
+
+        Set<String> windowHandles = Driver.getDriver().getWindowHandles();
+        List<String> allOpenTabs = new ArrayList<>(windowHandles);
+
+        //allOpenTabs.size()-1 --> don't close the empty tab
+        for (int i = 0; i < allOpenTabs.size()-1; i++) {
+            Driver.getDriver().switchTo().window(allOpenTabs.get(i));
+            Driver.getDriver().close();
+        }
+        BrowserUtils.switchToWindow(0);
+
+    }
+
+
+    @Then("users open the tab again")
+    public void usersOpenTheTabAgain() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("webpage"));
+    }
+
+
 }
