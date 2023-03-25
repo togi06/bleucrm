@@ -1,5 +1,3 @@
-
-@User8
 Feature: Login the website
   User Story;
   As a user, I should be able to login with correct credentials to
@@ -11,14 +9,14 @@ Feature: Login the website
     Given user is on "bleuCrm" login page
 
 
-
+  @User8.1
 Scenario: Dashboard H_username
 When user enters  H_username
 And user enters user password
 And user should see own name on the dashboard
 Then user can see their own usernames in the dashboard, after successful login
 
-
+  @User8.2
   Scenario: Dashboard Hr_username
     When user enters  Hr_username
     And user enters user password
@@ -26,7 +24,7 @@ Then user can see their own usernames in the dashboard, after successful login
     Then user can see their his usernames in the dashboard, after successful login
 
 
-
+  @User8.3
   Scenario: Dashboard M_username
     When user enters  M_username
     And user enters user password
