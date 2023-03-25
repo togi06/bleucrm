@@ -39,11 +39,13 @@ public class Logout_StepDefinitions {
     }
     @Then("users should log out")
     public void users_should_log_out() {
-        BrowserUtils.sleep(2);
+        BrowserUtils.sleep(1);
         logOutPage.showUserMenü.click();
         BrowserUtils.sleep(1);
         logOutPage.logOutBtn.click();
-      //  logOutPage.logOutUser.clear();
+
+        //burada ne Assert edebilirim?
+
 
     }
 
@@ -100,6 +102,8 @@ public class Logout_StepDefinitions {
     @Then("users open the tab again")
     public void usersOpenTheTabAgain() {
         Driver.getDriver().get(ConfigurationReader.getProperty("webpage"));
+        Assert.assertEquals("Authorization",Driver.getDriver().getTitle());
+
     }
 
 

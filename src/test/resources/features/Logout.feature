@@ -112,7 +112,7 @@ Feature: Log out the website
   #    | valid username2               |  | valid password2 |
   #    | marketing1@cybertekschool.com |  | UserUser        |
 
-  @User2LO
+  @User3LO
   Scenario Outline: Logout as Helpdesk and open the tab again
     Given users firstly go to on the "bleuCrm" login page
     When users enters "<valid username>" username

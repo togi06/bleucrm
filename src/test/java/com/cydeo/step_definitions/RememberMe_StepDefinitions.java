@@ -29,6 +29,7 @@ public class RememberMe_StepDefinitions {
     @Then("user cn click on checkbox")
     public void userCnClickOnCheckbox() {
         rememberMePage.checkBox.click();
+        Assert.assertTrue(rememberMePage.checkBox.isSelected());
 
     }
 }

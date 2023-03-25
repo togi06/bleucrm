@@ -26,6 +26,10 @@ public class Login_StepDefinitions {
     @When("user enters helpdesk password")
     public void user_enters_helpdesk_password() {
         bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("pass"));
+        String expectedPassword = "password";
+        String actualPassword = bleuCrmLoginPage.password.getAttribute("type");
+        Assert.assertEquals(expectedPassword, actualPassword);
+        System.out.println("actualPassword = "+ actualPassword);
 
     }
     @Then("user should see the dashboard")
