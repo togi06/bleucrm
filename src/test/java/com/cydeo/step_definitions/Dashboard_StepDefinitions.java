@@ -47,6 +47,8 @@ public class Dashboard_StepDefinitions {
 
     }
 
+    //Then kısımları  daha kolay ve verimli nasıl yapılabilinir?
+    //büyük bir ihtimalle Scenario Outline ve hook' da sleep ve driver.close u kullanarak!!!
     @Then("user can see their own usernames in the dashboard, after successful login")
    public void userCanSeeTheirOwnUsernamesInTheDashboardAfterSuccessfulLogin() {
       // BrowserUtils.sleep(2);
@@ -80,23 +82,8 @@ public class Dashboard_StepDefinitions {
 
     // }
 
-    // @Then("user can see their own usernames in the dashboard, after successful login")
-    //public void userCanSeeTheirOwnUsernamesInTheDashboardAfterSuccessfulLogin() {
 
-     //
-       // String expectedName = "helpdesk1[01]@cybertekschool.com";
-        //String actualName=  dashboardPage.dashboardName.getText();
-        //Assert.assertEquals( expectedName,actualName);
-   // }
 
-/*
-@Then("user can see their own {string} in the dashboard, after successful login")
-    public void userCanSeeTheirOwnInTheDashboardAfterSuccessfulLogin(String userName) {
-        String expectedName = "helpdesk1@cybertekschool.com";
-        String actualName=  dashboardPage.dashboardName.getText();
-        Assert.assertEquals( expectedName,actualName);
-    }
- */
 
 
 }
