@@ -1,14 +1,13 @@
-@logOut
+@BLEU10-296
 Feature: Log out the website
   Uer Story;
   As a user, I should be able to log out , after successful login
 
   Accounts are : Helpdesk, Human Resource, Marketing
   Background: for the scenarios in the feature file, user is expected to be on logout page
-
-@User1LO
-  Scenario Outline: Logout as Helpdesk
     Given users firstly go to on the "bleuCrm" login page
+@User1LO @BLEU10-287
+  Scenario Outline: Logout as an User
     When users enters "<valid username>" username
     And users enters "<valid password>" password
     And users should see the dashboard
@@ -62,9 +61,8 @@ Feature: Log out the website
    #   | marketing100@cybertekschool.com |  | UserUser        |
    #   | marketing101@cybertekschool.com |  | UserUser        |
 
-  @User2LO
+  @User2LO @BLEU10-288
   Scenario Outline: Logout as Helpdesk,Human Resource, Marketing and back
-    Given users firstly go to on the "bleuCrm" login page
     When users enters "<valid username>" username
     And users enters "<valid password>" password
     And users should see the dashboard
@@ -112,9 +110,8 @@ Feature: Log out the website
   #    | valid username2               |  | valid password2 |
   #    | marketing1@cybertekschool.com |  | UserUser        |
 
-  @User3LO
-  Scenario Outline: Logout as Helpdesk and open the tab again
-    Given users firstly go to on the "bleuCrm" login page
+  @User3LO @BLEU10-289
+  Scenario Outline: Logout as an User and open the tab again
     When users enters "<valid username>" username
     And users enters "<valid password>" password
     And users should see the dashboard

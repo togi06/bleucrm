@@ -4,8 +4,10 @@ import com.cydeo.pages.BleuCrmLoginPage;
 import com.cydeo.pages.EnterLoginPage;
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
 

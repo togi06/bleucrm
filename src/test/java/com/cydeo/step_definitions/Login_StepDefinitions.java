@@ -26,10 +26,7 @@ public class Login_StepDefinitions {
     @When("user enters helpdesk password")
     public void user_enters_helpdesk_password() {
         bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("pass"));
-        String expectedPassword = "password";
-        String actualPassword = bleuCrmLoginPage.password.getAttribute("type");
-        Assert.assertEquals(expectedPassword, actualPassword);
-        System.out.println("actualPassword = "+ actualPassword);
+
 
     }
     @Then("user should see the dashboard")
@@ -89,8 +86,38 @@ public class Login_StepDefinitions {
     }
 
 
+    @When("user enters  username {string}")
+    public void userEntersUsername(String arg0) {
+        bleuCrmLoginPage.login.sendKeys(ConfigurationReader.getProperty("userhelp101"));
+
+    }
+
+    @And("user enters password {string}")
+    public void userEntersPassword(String arg0) {
+        bleuCrmLoginPage.password.sendKeys(ConfigurationReader.getProperty("pass"));
+    }
+
+    @Then("user should see the password bullet signs")
+    public void userShouldSeeThePasswordBulletSigns() {
+        String expectedPassword = "password";
+        String actualPassword = bleuCrmLoginPage.password.getAttribute("type");
+        Assert.assertEquals(expectedPassword, actualPassword);
+        System.out.println("actualPassword = "+ actualPassword);
+    }
+
+    @When("user click {string} link")
+    public void userClickLink(String link) {
+        String actualText = bleuCrmLoginPage.forgotBtn.getText();
+        Assert.assertEquals(link,actualText);
+        bleuCrmLoginPage.forgotBtn.click();
+
+    }
+
+    @Then("user land on the {string} page")
+    public void userLandOnThePage(String link1) {
+        String actualLink = Driver.getDriver().getTitle();
+        Assert.assertEquals(link1,actualLink);
 
 
-
-
+    }
 }

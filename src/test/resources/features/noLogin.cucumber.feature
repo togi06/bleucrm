@@ -1,3 +1,4 @@
+@BLEU10-295
 Feature: Login the website
 
   User Story;
@@ -9,13 +10,13 @@ Feature: Login the website
     And user click the login button
     Then user should see "Please fill out this field" message
 
-  @User3
+  @User3.1 @BLEU10-283
   Scenario: Login as empty username
     When user enters empty  username
     And user enters correct password
 
 
-  @User4
+  @User3.2 @BLEU10-284
   Scenario: Login as correct username
     When user enters right username
     And user enters empty password

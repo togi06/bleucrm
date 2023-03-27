@@ -5,7 +5,7 @@ Feature:Login the website
   Background: for the scenarios in the feature file, user is expected to be on login page
     Given user is on the "bleuCrm" login page
 
-    @User5
+    @User5 @BLEU10-276
     Scenario: Remember Me
       When user login the page
       And user can see "Remember me on this computer"

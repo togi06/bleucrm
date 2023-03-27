@@ -43,8 +43,11 @@ public class Logout_StepDefinitions {
         logOutPage.showUserMenü.click();
         BrowserUtils.sleep(1);
         logOutPage.logOutBtn.click();
-
         //burada ne Assert edebilirim?
+        //böyle yapabılırız
+       Assert.assertEquals("Authorization",Driver.getDriver().getTitle());
+
+
 
 
     }
@@ -82,10 +85,15 @@ public class Logout_StepDefinitions {
 
     @And("users close the tab")
     public void usersCloseTheTab() {
-     //  BrowserUtils.sleep(2);
-       // Driver.getDriver().close();
-        BrowserUtils.openNewTab();
+   /*
+   BrowserUtils.sleep(2);
+    Driver.getDriver().close();
+        BrowserUtils.sleep(2);
+        Driver.getDriver().get(ConfigurationReader.getProperty("webpage"));
+    */
 
+
+        BrowserUtils.openNewTab();
         Set<String> windowHandles = Driver.getDriver().getWindowHandles();
         List<String> allOpenTabs = new ArrayList<>(windowHandles);
 
@@ -95,6 +103,9 @@ public class Logout_StepDefinitions {
             Driver.getDriver().close();
         }
         BrowserUtils.switchToWindow(0);
+
+
+
 
     }
 

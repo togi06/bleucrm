@@ -20,5 +20,9 @@ public class BleuCrmLoginPage {
     @FindBy(xpath = "//input[@class='login-btn']")
     public WebElement loginBtn;
 
+    @FindBy(xpath = "//a[@class='login-link-forgot-pass']")
+    public WebElement forgotBtn;
+
+
 
 }
